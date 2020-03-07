@@ -69,7 +69,7 @@
 
         private static IEnumerable<T> FindListenersOfType<T>()
         {
-            return FindObjectsOfType<MonoBehaviour>().OfType<T>();
+            return Resources.FindObjectsOfTypeAll<MonoBehaviour>().OfType<T>();
         }
 
         public void RegisterCommandListener(ITwitchCommandListener listener)
