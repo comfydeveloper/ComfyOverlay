@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c8efdba738d3124458de1d2249fa5cc3, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5ef26d3544bd55047a366d2870fdb6fd, type: 3}
+  - {fileID: 21300000, guid: 24b285278706e3e44bbf5126eb63dd02, type: 3}
+  - {fileID: 21300000, guid: eed866093aa0e124f94ba3ee2316fab7, type: 3}
+  - {fileID: 21300000, guid: 1ed3a2eadfce1b14e8e41c897c400189, type: 3}
+  - {fileID: 21300000, guid: 631bdf3b745fe8a4486e66b65ac7b009, type: 3}
+  - {fileID: 21300000, guid: 17fe694b77fcf384ea174558116b5df4, type: 3}
+  - {fileID: 21300000, guid: 8db87e4babdf9b2478d71deaef475efc, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Cake
+  - DefaultCursor
+  - Melon
+  - Yaaay
+  - HatKidUmbrella
+  - Apple
+  - Banana
+  m_Tag: SpriteAtlas
+  m_IsVariant: 0

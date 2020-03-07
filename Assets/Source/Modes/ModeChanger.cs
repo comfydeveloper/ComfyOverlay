@@ -23,7 +23,7 @@
         protected override bool CanHandle(IChatCommand chatCommand)
         {
             return chatCommand.Is("mode") && chatCommand.HasParameters()
-                   || (chatCommand.Is("stop") && chatCommand.IsBroadcaster || chatCommand.IsModerator);
+                   || chatCommand.Is("stop") && (chatCommand.IsBroadcaster || chatCommand.IsModerator);
         }
 
         protected override void Handle(IChatCommand chatCommand)
