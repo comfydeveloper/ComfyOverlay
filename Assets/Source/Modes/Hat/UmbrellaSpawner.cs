@@ -1,5 +1,7 @@
 ﻿namespace Assets.Source.Modes.Hat
 {
+    using System.Linq;
+
     using Assets.Source.Modes.Shared;
     using Assets.Source.Twitch.Extensions;
     using Assets.Source.Twitch.Wrappers;
@@ -7,7 +9,6 @@
     using Boo.Lang;
 
     using UnityEngine;
-    using UnityEngine.U2D;
 
     public class UmbrellaSpawner : CommandListenerMonoBehavior
     {
@@ -18,8 +19,8 @@
 
         public void Start()
         {
-            this.cameraBottomLeft = Camera.main.ViewportToWorldPoint(Camera.main.rect.min);
-            this.cameraUpperRight = Camera.main.ViewportToWorldPoint(Camera.main.rect.max);
+            this.cameraBottomLeft = Camera.main.ViewportToWorldPoint(Vector3.zero);
+            this.cameraUpperRight = Camera.main.ViewportToWorldPoint(Vector3.one);
         }
 
         protected override bool CanHandle(IChatCommand chatCommand)
@@ -30,12 +31,22 @@
         protected override void Handle(IChatCommand chatCommand)
         {
             this.StopTrackingDestroyedUmbrellas();
+            if (UserAlreadyHasUmbrella(chatCommand.ChatMessage.Username))
+            {
+                return;
+            }
+
             Vector3 spawnPosition = this.GetRandomSpawnPosition();
 
             GameObject newUmbrella = Instantiate(this.UmbrellaPrefab, spawnPosition, Quaternion.identity);
             newUmbrella.GetComponent<UmbrellaController>().SetName(chatCommand.ChatMessage.Username);
 
             this.umbrellas.Add(newUmbrella);
+        }
+
+        private bool UserAlreadyHasUmbrella(string userName)
+        {
+            return this.umbrellas.Any(u => u.GetComponent<UmbrellaController>().Text.text == userName);
         }
 
         public void OnDisable()
