@@ -9,5 +9,9 @@
         List<string> ArgumentsAsList { get; }
 
         IChatMessage ChatMessage { get; }
+
+        bool IsBroadcaster { get; }
+
+        bool IsModerator { get; }
     }
 }

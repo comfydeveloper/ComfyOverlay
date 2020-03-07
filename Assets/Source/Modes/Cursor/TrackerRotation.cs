@@ -10,11 +10,11 @@
 
     public class TrackerRotation : CommandListenerMonoBehavior
     {
-        private float rotationSpeed;
+        public float RotationSpeed;
 
         public void Update()
         {
-            this.transform.Rotate(Vector3.forward * this.rotationSpeed * Time.deltaTime);
+            this.transform.Rotate(Vector3.forward * this.RotationSpeed * Time.deltaTime);
         }
 
         protected override bool CanHandle(IChatCommand chatCommand)
@@ -35,15 +35,15 @@
         {
             if (newRotationSpeed < 0f)
             {
-                this.rotationSpeed = 0f;
+                this.RotationSpeed = 0f;
             }
-            else if (newRotationSpeed > 50f)
+            else if (newRotationSpeed > 100f)
             {
-                this.rotationSpeed = 50f;
+                this.RotationSpeed = 100f;
             }
             else
             {
-                this.rotationSpeed = newRotationSpeed;
+                this.RotationSpeed = newRotationSpeed;
             }
         }
     }

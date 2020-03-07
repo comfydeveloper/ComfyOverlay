@@ -8,6 +8,11 @@
     {
         public GameObject[] ElementsInMode;
 
+        public bool Is(string modeName)
+        {
+            return modeName.ToLower() == "cursor";
+        }
+
         public void Enable()
         {
             foreach (GameObject element in this.ElementsInMode)

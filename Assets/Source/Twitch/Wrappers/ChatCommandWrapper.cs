@@ -26,5 +26,9 @@
                 return message ?? (this.message = this.chatCommand.ChatMessage.Wrap());
             }
         }
+
+        public bool IsBroadcaster { get { return this.ChatMessage.IsBroadcaster; } }
+
+        public bool IsModerator { get { return this.ChatMessage.IsModerator; } }
     }
 }

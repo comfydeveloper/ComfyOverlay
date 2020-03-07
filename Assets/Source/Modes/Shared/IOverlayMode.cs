@@ -2,6 +2,8 @@
 {
     public interface IOverlayMode
     {
+        bool Is(string modeName);
+
         void Enable();
 
         void Disable();

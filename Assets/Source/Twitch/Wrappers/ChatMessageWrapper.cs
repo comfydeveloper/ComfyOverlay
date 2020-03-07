@@ -12,5 +12,9 @@ namespace Assets.Source.Twitch.Wrappers
         }
 
         public string Username { get { return this.chatMessage.Username; } }
+
+        public bool IsBroadcaster { get { return this.chatMessage.IsBroadcaster; }}
+
+        public bool IsModerator { get { return this.chatMessage.IsModerator; } }
     }
 }
