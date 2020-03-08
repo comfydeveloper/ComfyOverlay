@@ -25,7 +25,7 @@
 
         protected override bool CanHandle(IChatCommand chatCommand)
         {
-            return chatCommand.Is("umbrella");
+            return chatCommand.Is("umbrella") || chatCommand.Is("drop");
         }
 
         protected override void Handle(IChatCommand chatCommand)
