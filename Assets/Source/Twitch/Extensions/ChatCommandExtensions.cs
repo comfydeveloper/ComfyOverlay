@@ -15,5 +15,10 @@
         {
             return command.CommandText.ToLower() == commandText;
         }
+
+        public static bool IsFromStaff(this IChatCommand command)
+        {
+            return command.IsBroadcaster || command.IsModerator;
+        }
     }
 }

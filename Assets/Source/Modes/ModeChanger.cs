@@ -14,6 +14,7 @@
         private List<IOverlayMode> modes;
 
         private IOverlayMode activeMode;
+        private bool isLocked;
 
         public void Start()
         {
@@ -23,28 +24,50 @@
         protected override bool CanHandle(IChatCommand chatCommand)
         {
             return chatCommand.Is("mode") && chatCommand.HasParameters()
-                   || chatCommand.Is("stop") && (chatCommand.IsBroadcaster || chatCommand.IsModerator);
+                   || chatCommand.Is("stop") && chatCommand.IsFromStaff()
+                   || chatCommand.Is("lock") && chatCommand.IsFromStaff()
+                   || chatCommand.Is("unlock") && chatCommand.IsFromStaff();
         }
 
         protected override void Handle(IChatCommand chatCommand)
         {
-            if (chatCommand.Is("mode"))
+            if (!this.isLocked && chatCommand.Is("mode"))
             {
-                string modeName = chatCommand.ArgumentsAsList[0];
-                IOverlayMode mode = this.modes.FirstOrDefault(m => m.Is(modeName));
-
-                if (mode != null)
-                {
-                    this.activeMode?.Disable();
-                    this.activeMode = mode;
-                    mode.Enable();
-                }
+                this.ChangeMode(chatCommand);
             }
 
             if (chatCommand.Is("stop"))
             {
+                this.StopCurrentMode();
+            }
+
+            if (chatCommand.Is("lock"))
+            {
+                this.isLocked = true;
+            }
+
+            if (chatCommand.Is("unlock"))
+            {
+                this.isLocked = false;
+            }
+        }
+
+        private void StopCurrentMode()
+        {
+            this.activeMode?.Disable();
+            this.activeMode = null;
+        }
+
+        private void ChangeMode(IChatCommand chatCommand)
+        {
+            string modeName = chatCommand.ArgumentsAsList[0];
+            IOverlayMode mode = this.modes.FirstOrDefault(m => m.Is(modeName));
+
+            if (mode != null)
+            {
                 this.activeMode?.Disable();
-                this.activeMode = null;
+                this.activeMode = mode;
+                mode.Enable();
             }
         }
     }
