@@ -5,6 +5,8 @@
 [Bb]uilds/
 [Bb]uild Versions/
 Assets/AssetStoreTools*
+[Oo]utput/
+Output/
 
 # Visual Studio cache directory
 .vs/
