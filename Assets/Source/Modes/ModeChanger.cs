@@ -61,6 +61,12 @@
         private void ChangeMode(IChatCommand chatCommand)
         {
             string modeName = chatCommand.ArgumentsAsList[0];
+
+            if (this.activeMode != null && this.activeMode.Is(modeName))
+            {
+                return;
+            }
+
             IOverlayMode mode = this.modes.FirstOrDefault(m => m.Is(modeName));
 
             if (mode != null)
