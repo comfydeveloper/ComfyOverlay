@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114857273468480048}
   - component: {fileID: 95710368008053046}
   - component: {fileID: 50113624525482748}
+  - component: {fileID: 114805155035766708}
   m_Layer: 0
   m_Name: Potata
   m_TagString: Untagged
@@ -168,6 +169,20 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 3774873600
+--- !u!114 &114805155035766708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807102698636474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145c516672a78e2459b1d3de2477f804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogBoxPrefab: {fileID: 1912584492403436, guid: c270972c1144aa74bb9d67a3ff2b7042,
+    type: 2}
+  dialogBoxOffset: 1.27
 --- !u!114 &114857273468480048
 MonoBehaviour:
   m_ObjectHideFlags: 1

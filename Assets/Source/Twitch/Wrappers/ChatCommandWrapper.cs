@@ -19,6 +19,8 @@
 
         public List<string> ArgumentsAsList { get { return this.chatCommand.ArgumentsAsList; }}
 
+        public string ArgumentsAsString { get { return this.chatCommand.ArgumentsAsString; }}
+
         public IChatMessage ChatMessage
         {
             get

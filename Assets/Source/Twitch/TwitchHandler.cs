@@ -69,7 +69,10 @@
 
         private static IEnumerable<T> FindListenersOfType<T>()
         {
-            return Resources.FindObjectsOfTypeAll<MonoBehaviour>().OfType<T>();
+            IEnumerable<T> listeners = Resources.FindObjectsOfTypeAll<MonoBehaviour>()
+                                                .Where(b => !IsPrefab(b))
+                                                .OfType<T>();
+            return listeners;
         }
 
         public void RegisterCommandListener(ITwitchCommandListener listener)
@@ -90,6 +93,11 @@
         public void UnregisterMessageListener(ITwitchMessageListener listener)
         {
             this.messageListeners.Remove(listener);
+        }
+
+        private static bool IsPrefab(Component component)
+        {
+            return component.gameObject.scene.name == null;
         }
     }
 }

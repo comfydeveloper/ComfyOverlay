@@ -8,6 +8,8 @@
 
         List<string> ArgumentsAsList { get; }
 
+        string ArgumentsAsString { get; }
+
         IChatMessage ChatMessage { get; }
 
         bool IsBroadcaster { get; }

@@ -8,6 +8,6 @@
     /// </summary>
     public interface ITwitchMessageListener
     {
-        void OnMessageReceived(IChatMessage chatCommand);
+        void OnMessageReceived(IChatMessage chatMessage);
     }
 }

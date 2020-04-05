@@ -10,6 +10,7 @@ TagManager:
   - TopBoundary
   - DestructionPlane
   - Umbrella
+  - GardenUi
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b67a25244f64fe5428cd1d99db68dc7b, type: 3}
   - {fileID: 21300000, guid: 5ef26d3544bd55047a366d2870fdb6fd, type: 3}
   - {fileID: 21300000, guid: 24b285278706e3e44bbf5126eb63dd02, type: 3}
+  - {fileID: 21300000, guid: 8eae07385fc2fe0418f1b133b81c6c1e, type: 3}
   - {fileID: 21300000, guid: eed866093aa0e124f94ba3ee2316fab7, type: 3}
   - {fileID: 21300022, guid: aa50a87a4606dba4d8f5e27d25ae27c3, type: 3}
   - {fileID: 21300020, guid: aa50a87a4606dba4d8f5e27d25ae27c3, type: 3}
@@ -72,6 +73,7 @@ SpriteAtlas:
   - GardenGround
   - Cake
   - DefaultCursor
+  - MessageBox
   - Melon
   - Potata-Spritesheet_11
   - Potata-Spritesheet_10
