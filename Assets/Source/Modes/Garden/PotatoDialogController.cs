@@ -29,6 +29,8 @@ namespace Assets.Source.Modes.Garden
 
         private bool isDialogBoxOpen;
 
+        public string UserName { get; set; }
+
         public void Start()
         {
             this.RegisterListener();
@@ -54,7 +56,7 @@ namespace Assets.Source.Modes.Garden
 
         public void OnCommandReceived(IChatCommand chatCommand)
         {
-            if (chatCommand.Is("say") && !this.isDialogBoxOpen)
+            if (chatCommand.Is("say") && !this.isDialogBoxOpen && this.UserName == chatCommand.ChatMessage.Username)
             {
                 this.isDialogBoxOpen = true;
                 this.dialogBox.SetActive(true);

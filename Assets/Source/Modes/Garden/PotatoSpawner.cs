@@ -39,6 +39,7 @@
 
             GameObject potato = Instantiate(this.potatoPrefab, spawnPosition, Quaternion.identity);
             potato.GetComponent<PotatoController>().SetName(chatCommand.ChatMessage.Username);
+            potato.GetComponent<PotatoDialogController>().UserName = chatCommand.ChatMessage.Username;
             this.potatoes.Add(potato);
         }
 
